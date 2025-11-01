@@ -1,0 +1,620 @@
+   html,body{
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background:black;
+	font-family:'Source Sans Pro', sans-serif;
+}
+
+h1{
+  font-family: "Candara" , sans-serif, bold;
+  font-size:5vh;
+  margin: 0;
+}
+
+#donateButton{
+  background-color: gold;
+  border-radius: 5px;
+  border: solid black 2px;
+}
+
+
+.footnote{
+  font-size: 12px;
+}
+
+.fb-share-button{
+  z-index: 1000;
+}
+
+#donateButton{
+  z-index: 1000;
+}
+
+.besideLogo{
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  //right: 10px;
+  //top:0px;
+  float: top;
+  float: right;
+  width: 20%;
+}
+
+.advert{
+  display: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 5px gold;
+  position: absolute;
+  right : 50vw;
+  bottom : 50vh;
+  -webkit-transform: translateX(50%) translateY(50%);
+          transform: translateX(50%) translateY(50%); 
+  height: 80vh;
+  mmtop: 10vh;
+  mmwidth: 100vw;
+  font-size:5vh;
+  z-index: 500;
+  font-family: "Candara" , sans-serif;
+  background-color : white;
+  color: black;
+  text-align: center;
+  overflow: auto;
+}
+
+.okButton:hover {background-color: blue}
+
+.okButton:active {
+  background-color: red;
+  box-shadow: 0 5px #666;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.container{
+  mdisplay: none;
+	width:100vw;
+	height:100vh;
+	Mtransition:background 0.3s;
+  overflow: scroll;
+}
+
+#message{
+  position:absolute;
+  left:3px;
+  z-index: 10;
+  color: white;
+  font-family: "Candara" , sans-serif;
+  font-size: 5vh;
+}
+.container.out{
+	mbackground:#d04040;
+}
+.arrow{
+	position:absolute;
+	top:-100px;
+	z-index:255;
+	-webkit-transition:left 0.2s, top 0.2s;
+	transition:left 0.2s, top 0.2s;
+	margin-top:5px;
+	width: 0; 
+	height: 0; 
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-top: 50px solid #f3f3f3;
+  display:none;
+}
+
+
+.midline{
+	position:relative;
+	width:100px;
+	height:100vh;
+	background:#20c0b0;
+	left:calc(50vw - 50px);
+	z-index:0;
+	-webkit-transition:background 0.3s;
+	transition:background 0.3s;
+  display:none;
+}
+.container.out .midline{
+	background:#b02020;
+}
+.noteDiv{
+  display: none;
+	position:absolute;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+	top:5vh;
+	width:15vw;
+	text-align:center;
+	color:black;
+  background-color: white;
+	font-size:10vh;
+  z-index: 100;
+  padding: 20px;
+  border-radius: 50%;
+  font-family: "Candara" , sans-serif;
+  opacity: 60%;
+}
+
+
+.triangle:after {
+ content: "";
+ width: 0px;
+ height: 0px;
+ position: absolute;
+ border-left: 15px solid transparent;
+ border-right: 15px solid transparent;
+ border-top: 15px solid #fff;
+ border-bottom: 15px solid transparent;
+ right: 50%;
+ -webkit-transform: translateX(50%);
+         transform: translateX(50%);
+ bottom: -28px;
+}
+
+#pointerContainer{
+ display: none;
+ z-index: 254;
+ position: absolute;
+}
+
+.pointToKey{
+  left: 40px;
+  top: 50vh;
+  -webkit-animation: forwardBack 0.5s linear infinite;
+          animation: forwardBack 0.5s linear infinite;
+}
+
+.pointToLevels{
+  top: 0vh;
+  right: 10vh;
+  -webkit-animation: upDown 0.5s linear infinite;
+          animation: upDown 0.5s linear infinite;
+}
+
+#pointerLeftArrow {
+ z-index: 254;
+ content: "";
+ width: 0px;
+ height: 0px;
+ position: absolute;
+ border-right: 10vh solid gold;
+ border-left:  10vh solid transparent;
+ border-top: 10vh solid transparent;
+ border-bottom: 10vh solid transparent;
+ top: 50%;
+ -webkit-transform: translateY(-50%);
+         transform: translateY(-50%);
+}
+
+#pointerLeftArrowShaft {
+ mdisplay: none;
+ z-index: 254;
+ content: "";
+ width: 10vh;
+ height: 10vh;
+ position: absolute;
+ background-color: gold;
+ mright: 100%;
+ top: 50%;
+ -webkit-transform: translateY(-50%) translateX(20vh);
+         transform: translateY(-50%) translateX(20vh);
+}
+
+@-webkit-keyframes wiggle{
+  50%   {-webkit-transform: rotate(-10deg);transform: rotate(-10deg)}
+  50%   {-webkit-transform: rotate(10deg);transform: rotate(10deg)}
+}
+
+@keyframes wiggle{
+  50%   {-webkit-transform: rotate(-10deg);transform: rotate(-10deg)}
+  50%   {-webkit-transform: rotate(10deg);transform: rotate(10deg)}
+}
+
+.wiggle{
+  -webkit-animation: wiggle 1s linear;
+          animation: wiggle 1s linear;
+}
+
+@-webkit-keyframes forwardBack{
+  50%   {-webkit-transform: translateX(-10px);transform: translateX(-10px)}
+  50%   {-webkit-transform: translateX(10px);transform: translateX(10px)}
+}
+
+@keyframes forwardBack{
+  50%   {-webkit-transform: translateX(-10px);transform: translateX(-10px)}
+  50%   {-webkit-transform: translateX(10px);transform: translateX(10px)}
+}
+
+
+@-webkit-keyframes upDown{
+  0%   {-webkit-transform: translateY(10px) rotate(90deg);transform: translateY(10px) rotate(90deg)}
+  50%   {-webkit-transform: translateY(-10px) rotate(90deg);transform: translateY(-10px) rotate(90deg)}
+  100%   {-webkit-transform: translateY(10px) rotate(90deg);transform: translateY(10px) rotate(90deg)}
+  
+}
+
+
+@keyframes upDown{
+  0%   {-webkit-transform: translateY(10px) rotate(90deg);transform: translateY(10px) rotate(90deg)}
+  50%   {-webkit-transform: translateY(-10px) rotate(90deg);transform: translateY(-10px) rotate(90deg)}
+  100%   {-webkit-transform: translateY(10px) rotate(90deg);transform: translateY(10px) rotate(90deg)}
+  
+}
+
+@-webkit-keyframes brideAnim{
+  0% {-webkit-transform: scale(-1, 1);transform: scale(-1, 1);}
+  50%   {-webkit-transform: scale(-1,1) translateX(-100%);transform: scale(-1,1) translateX(-100%)}
+  100%   {-webkit-transform: scale(-1,1) translateX(-100%) translateY(300%);transform: scale(-1,1) translateX(-100%) translateY(300%)}
+}
+
+@keyframes brideAnim{
+  0% {-webkit-transform: scale(-1, 1);transform: scale(-1, 1);}
+  50%   {-webkit-transform: scale(-1,1) translateX(-100%);transform: scale(-1,1) translateX(-100%)}
+  100%   {-webkit-transform: scale(-1,1) translateX(-100%) translateY(300%);transform: scale(-1,1) translateX(-100%) translateY(300%)}
+}
+
+.brideAnim{
+  -webkit-animation: brideAnim 2s normal forwards ease-in-out;
+          animation: brideAnim 2s normal forwards ease-in-out;
+}
+
+@-webkit-keyframes sharkAnim{
+  10% {-webkit-transform: scale(-1, 1);transform: scale(-1, 1);}
+  40%   {-webkit-transform: scale(-1,1) translateX(-200%);transform: scale(-1,1) translateX(-200%)}
+  50%   {-webkit-transform: scale(-1,1) translateX(-200%);transform: scale(-1,1) translateX(-200%)}
+  60%   {-webkit-transform: translateX(200%);transform: translateX(200%)}
+  90%   {}
+  100%  {}
+}
+
+@keyframes sharkAnim{
+  10% {-webkit-transform: scale(-1, 1);transform: scale(-1, 1);}
+  40%   {-webkit-transform: scale(-1,1) translateX(-200%);transform: scale(-1,1) translateX(-200%)}
+  50%   {-webkit-transform: scale(-1,1) translateX(-200%);transform: scale(-1,1) translateX(-200%)}
+  60%   {-webkit-transform: translateX(200%);transform: translateX(200%)}
+  90%   {}
+  100%  {}
+}
+
+.sharkAnim{
+  -webkit-animation: sharkAnim 10s infinite ease-in-out;
+          animation: sharkAnim 10s infinite ease-in-out;
+}
+
+
+
+
+.canv{
+	position:absolute;
+	width:100vw;
+	height:50vh;
+	top:0;
+	left:0;
+	z-index:254;
+  display:none;
+}
+
+#mainCanvas{
+	position:absolute;
+	mmwidth:100vw;
+	mmheight:100vh;
+	top:0;
+	left:0;
+	z-index:0;
+  display:none;
+  pointer-events: none
+}
+
+#agent{
+  position:absolute;
+	bottom:50vh;
+  right:50vw;
+	mwidth:100vw;
+	text-align:center;
+	mbackground-color:black;
+	mfont-size:20pt;
+  z-index:10;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.startTarget{
+  position:absolute;
+  right:50vw;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  border-bottom: 5px solid #084c72;
+  z-index:100;
+  font-size: 10vh;
+  color: #084c72;
+  text-align: center;
+}
+
+.line {
+  display: none;
+  mbox-sizing: border-box;
+  position:absolute;
+	width:100vw;
+  height:2px;
+	background-color:white;
+	font-size:20pt;
+  opacity: 0.2;
+}
+
+.cLine{
+  background-color:white;
+}
+
+.semitoneBlock{
+  mborder: 1px solid white;
+  mbackground-color: green;
+  position:absolute;
+  box-sizing: border-box;
+  text-align: center;
+  mz-index: 3;
+}
+
+.semitoneBlock span{
+  mfloat: right;
+  font-family: "Arial", "Helvetica", sans-serif;
+  color: white;
+  mmmmbackground-color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-weight: bold;
+  white-space:nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index : 50;
+  
+}
+
+.underground{
+  mbox-sizing: border-box;
+  position:absolute;
+	width:100vw;
+	mbackground-color:dodgerblue;
+  background-image: -webkit-linear-gradient(#439da7,80%, #084c72);
+  background-image: linear-gradient(#439da7,80%, #084c72);
+  mdisplay: none;
+}
+
+.sky{
+  box-sizing: border-box;
+  position:absolute;
+	width:100vw;
+	mbackground-image: linear-gradient(midnightblue,10%, dodgerblue, 90%, white);
+  background-image: -webkit-linear-gradient(#b4b4ba,10%, #d6b1b3, 50%, #f5c097, 90%, white);
+  background-image: linear-gradient(#b4b4ba,10%, #d6b1b3, 50%, #f5c097, 90%, white);
+  z-index: 0;
+  mdisplay: none;
+}
+
+#keySelect{
+  z-index: 10;
+  position:absolute;
+  top: 50vh;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+
+
+button.keySelect{
+  font-size:20pt;
+  margin: 3px;
+  font-family: "Candara" , sans-serif;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#keyDisplay{
+ background: none;
+ border: none;
+  display: block;
+}
+
+.levelSelector{
+  box-sizing: border-box;
+  z-index: 10;
+  z-index: 10;
+  position:absolute;
+  mtop: 3px;
+  right:3px;
+  color : white;
+  border:0px;
+  outline:0px;
+  background:none;
+  font-family: "Candara" , sans-serif;
+}
+
+@-webkit-keyframes largeToSmall{
+  0%   {right: 50%; -webkit-transform: translateX(50%) translateY(100%) scale(2,2); transform: translateX(50%) translateY(100%) scale(2,2)}
+  80%  {right: 50%; -webkit-transform: translateX(50%) translateY(100%) scale(2,2); transform: translateX(50%) translateY(100%) scale(2,2)}
+  100%  {right: 3px;}
+}
+
+@keyframes largeToSmall{
+  0%   {right: 50%; -webkit-transform: translateX(50%) translateY(100%) scale(2,2); transform: translateX(50%) translateY(100%) scale(2,2)}
+  80%  {right: 50%; -webkit-transform: translateX(50%) translateY(100%) scale(2,2); transform: translateX(50%) translateY(100%) scale(2,2)}
+  100%  {right: 3px;}
+}
+
+.largeToSmall{
+  -webkit-animation: largeToSmall 2s linear;
+          animation: largeToSmall 2s linear;
+}
+
+option { 
+    /* Whatever color  you want */
+    background-color: #82caff;
+}
+
+.blink {
+  -webkit-animation: blinker 0.2s linear infinite;
+          animation: blinker 0.2s linear infinite;
+}
+
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes borderTopBlinker {
+  0% {border-top: 5px solid yellow;}
+  50% {border-top: 5px solid red;}
+  100% {border-top: 5px solid yellow;}
+}
+
+@keyframes borderTopBlinker {
+  0% {border-top: 5px solid yellow;}
+  50% {border-top: 5px solid red;}
+  100% {border-top: 5px solid yellow;}
+}
+
+.borderTop{
+  -webkit-animation: borderTopBlinker 0.5s linear infinite;
+          animation: borderTopBlinker 0.5s linear infinite;
+}
+
+#logo{
+  mright : 50vw;
+  mtransform: translateX(50%);
+}
+
+#wordsDiv{
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 3px black;
+  position: absolute;
+  right : 50vw;
+  bottom : 50vh;
+  -webkit-transform: translateX(50%) translateY(50%);
+          transform: translateX(50%) translateY(50%); 
+  mtop: 8vh;
+  height: 80vh;
+  font-size:5vh;
+  z-index: 254;
+  font-family: "Candara" , sans-serif;
+  background-color : white;
+  color: black;
+  text-align: center;
+  overflow: auto;
+}
+
+.helpButton{
+  position: absolute;
+  bottom: 3px;
+  left:3px;
+  z-index:254;
+  font-size:5vh;
+  background-color: white;
+  border-radius: 2vh;
+  font-family: "Candara" , sans-serif;
+}
+
+#okButton{
+  z-index:254;
+  font-size:10vh;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.generalButton{
+  z-index:254;
+  font-size:5vh;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#okButton:hover, .helpButton:hover, #keySelect button:hover, .levelSelector:hover {background-color: lightblue}
+
+#okButton:active, .helpButton:active, #keySelect button:active {
+  background-color: dodgerblue;
+}
+
+.animatedSprite{
+  position: absolute;
+  z-index: 100;
+}
+
+#log{
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 50px;
+  z-index: 100;
+}
+
+#feedbackFormDiv{
+  text-align: center;
+  position: absolute;
+  display: none;
+  z-index: 1000;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+}
+
+.popUp{
+  text-align: center;
+  position: absolute;
+  display: none;
+  z-index: 1000;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+}
+
+
+.cloud{
+   position: absolute;
+   z-index: 0;
+   //top: 0;
+   right: 0;
+   -webkit-animation: cloudAnim 120s linear infinite;
+           animation: cloudAnim 120s linear infinite;
+   opacity: 0.5;
+}
+
+@-webkit-keyframes cloudAnim{
+  0%   {-webkit-transform: translateX(100%);transform: translateX(100%)}
+  100% {-webkit-transform: translateX(-100vw);transform: translateX(-100vw)}
+}
+
+@keyframes cloudAnim{
+  0%   {-webkit-transform: translateX(100%);transform: translateX(100%)}
+  100% {-webkit-transform: translateX(-100vw);transform: translateX(-100vw)}
+}
+
+
+
